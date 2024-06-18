@@ -33,14 +33,16 @@ Dentro do requisito tecnico, foi escolhido a trilha de back-end com um minimo de
 1. clonar o repositorio <br/>
 2. importar o projeto em alguma IDE de preferencia ou gerar versão da aplicação com o maven: mvn package <br/>
 3. executar o jar da aplicação com o comando: java -jar target/email-service-0.0.1-SNAPSHOT.jar <br/>
-4. com aplicativos clientes como postman ou insomnia, criar nova requisição POST para o endpoint dominio_local:8080/api/email <br/>
-Obs: ver exemplo de requisição com API Docs em: http://localhost:8080/swagger-ui.html
+4. com aplicativos clientes como postman ou insomnia, criar nova requisição POST para o endpoint dominio_local:8080/api/email como o payload JSON <br/>
+Obs: ver exemplo de payload JSON com API Docs em: http://localhost:8080/swagger-ui.html
 
 <br/>
 
 <h4>Resultados</h4>
 Requisição Postman: <br/>
 ![Screenshot](docs/apostman.JPG)
+
+<br/>
 
 Email recebido: <br/>
 ![Screenshot](docs/email.JPG)
