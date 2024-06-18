@@ -40,7 +40,7 @@ Obs: ver exemplo de requisição com API Docs em: http://localhost:8080/swagger-
 
 <h4>Resultados</h4>
 Requisição Postman: <br/>
-![Screenshot](docs/postman.JPG)
+![Screenshot](docs/apostman.JPG)
 
 Email recebido: <br/>
 ![Screenshot](docs/email.JPG)
