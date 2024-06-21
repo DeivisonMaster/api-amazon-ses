@@ -1,88 +1,69 @@
-<h1> API de envio de e-mails </h1>
-Api desenvolvida como parte de resolução de desafio back-end Uber <br/>
-https://github.com/uber-archive/coding-challenge-tools/blob/master/coding_challenge.md
-<br/><br/>
+# API Spring Boot de E-mails
 
-<h2>Proposta</h2>
-Desenvolver Serviço de envio de e-mails utilizando o serviço Amazon SES.
-<br/><br/>
+**API Spring Boot 3.x para envio de e-mails utilizando Amazon SES**
 
-<h2>Requisitos Técnicos</h2>
-Arquitetura RESTful com entradas e saídas em JSON <br/>
-Testes <br/>
-Documentação <br/>
-Implantação Cloud<br/>
-<br/><br/>
+## O que foi desenvolvido
+**Foi desenvolvido um serviço de envio de emails que recebe os dados de um cliente como destino, assunto e mensagem e envia estes dados ao seu destino.**
+**A aplicação foi implantada em uma instância EC2 mas por questões de custos, o serviço esta offline.**
 
-<h2>O que foi desenvolvido</h2>
-Foi desenvolvido um serviço de envio de emails que recebe os dados de um cliente como destino, assunto e mensagem e envia estes dados ao seu destino.
-A aplicação foi implantada em uma instância EC2 mas por questões de custos, o serviço esta offline.
+**Foi escolhido o nivel Pleno para o desafio <br/>**
+**O Java na versão 17 foi escolhido como linguagem. <br/>**
+**Utilizado padrão Restful para o desenvolvimento do serviço. <br/>**
+**Dentro do requisito tecnico, foi escolhido a trilha de back-end com um minimo de front-end sendo a documentação via API Docs.**
 
-Foi escolhido o nivel Pleno para o desafio técnico. <br/>
-O Java na versão 17 foi escolhido como linguagem. <br/>
-Utilizado padrão Restful para o desenvolvimento do serviço. <br/>
-Dentro do requisito tecnico, foi escolhido a trilha de back-end com um minimo de front-end sendo a documentação via API Docs.
+## Tecnologias
+
+- **Java 17** 
+- **Apache Maven** 
+- **Spring Boot** 
+- **Spring IoC**
+- **Swagger** 
+- **Devtools**
+- **Apache Tomcat** 
+- **IDE Spring Tool Suite** 
+- **MockMvc**
+- **AssertJ** 
+
+## Como rodar a aplicação
+
+**Inicie a aplicação usando qualquer um dos comandos abaixo**
+
+> **Nota:** Para os dois primeiros comandos, é necessario executar dentro da pasta raiz do projeto i.e **email-service** pasta
+
+- **Usando maven** ``` mvn spring-boot:run```
+
+- **A partir de arquivo jar**
+  Criar um arquivo jar usando o comando '**mvn clean install**' e então executar 
+  <br/>```java -jar target/email-service-0.0.1-SNAPSHOT.jar```
 
 
-<h2>Como testar</h2>
-<h4>Pré-requisitos</h4>
-É necessario possuir um registro de email configurado no Amazon SES para envio de emails. <br/>
-É necessario também chaves de acessos geradas pelo serviço Amazon SES configuradas em application.properties </br>
+- **Diretamente a partir de uma IDE**
+  <br/>```Clicar com o botão direito em EmailServiceApplication.java e então clicar na opção 'Run' ```
+  <br/><br/>
 
-<h4>Iniciando o App</h4>
-1. clonar o repositorio <br/>
-2. importar o projeto em alguma IDE de preferencia ou gerar versão da aplicação com o maven: mvn package <br/>
-3. executar o jar da aplicação com o comando: java -jar target/email-service-0.0.1-SNAPSHOT.jar <br/>
-4. com aplicativos clientes como postman ou insomnia, criar nova requisição POST para o endpoint dominio_local:8080/api/email como o payload JSON <br/>
-Obs: ver exemplo de payload JSON com API Docs em: http://localhost:8080/swagger-ui.html
-
-<br/>
-
-<h4>Resultados</h4>
-Requisição Postman: <br/>
-![Screenshot](docs/apostman.JPG)
-
-<br/>
-
-Email recebido: <br/>
-![Screenshot](docs/email.JPG)
-  
-<h2>Padrão de Arquitetura</h2>
-MVC
+> **Nota:** Por padrão aplicações Spring Boot iniciam na porta 8080. 
+Se a porta 8080 estiver ocupada em seu sistema, então voce pode mudar o numero da porta atualizando a linha **server.port**  dentro do arquivo 
+**application.properties** que esta disponivel dentro da pasta **src > main > resources**.
 
 <br/>
 
-<h2>Testes Realizados</h2>
-Testes de unidade do Controller - Testes de unidade no Endpoint
+**Envie uma requisição POST para o endpoint '/api/emails' endpoint usando um aplicativo terceiro como o Postman**
 
-<br/>
+## Acesso a API Docs
+- **Swagger** ``` http://localhost:8080/swagger-ui.html ```
+- **API Docs** ``` http://localhost:8080/v3/api-docs ```
 
-Executar o comando: mvn test 
+## Como rodar os testes de Unidade
 
-<br/>
-<h2>Endpoint:</h2>
-http://localhost:8080/api/email
+**Rode os casos de testes usando qualquer comando abaixo**
 
-<h2>Tecnologias Aplicadas</h2>
-<p>Java 17</p>
-<p>Apache Maven</p>
-<p>Spring Boot</p>
-<p>Spring IoC</p>
-<p>Swagger</p>
-<p>Devtools</p>
-<p>Apache Tomcat</p>
-<p>IDE Spring Tool Suite</p>
-<p>MockMvc</p>
-<p>AssertJ</p>
+> **Nota:** Estes comandos precisam rodar dentro da pasta raiz do projeto i.e dentro de **email-service**
 
-Acesso Open API doc:
-1. http://localhost:8080/swagger-ui.html
-2. http://localhost:8080/v3/api-docs
-<br/>
-
-![Screenshot](docs/api-docs.JPG)
-
-<br/>
-  
+- **Para rodar todos os testes**
+  <br/>```mvn test```
 
 
+- **Para rodar uma classe de teste em particular**
+  <br/>```mvn -Dtest=EnviadorEmailControllerTest test```
+  <br/>or
+  <br/>```mvn -Dtest=EnviadorEmailControllerTest test```

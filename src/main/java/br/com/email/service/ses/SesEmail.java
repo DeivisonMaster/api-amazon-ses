@@ -23,7 +23,7 @@ public class SesEmail implements FabricaEnviadorEmail {
 	@Override
 	public void envia(String para, String assunto, String corpo) {
 		SendEmailRequest request = new SendEmailRequest()
-				.withSource("seu_email_aws_ses_aqui@email.com")
+				.withSource("seu_email@email.com")
 				.withDestination(new Destination().withToAddresses(para))
 				.withMessage(new Message()
 						.withSubject(new Content(assunto))

@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("/api/email")
+@RequestMapping("/api/emails")
 @Slf4j
 public class EnviadorEmailController {
 	
@@ -35,8 +35,8 @@ public class EnviadorEmailController {
 			this.enviadorEmail.envia(emailRequisicao.para(), emailRequisicao.assunto(), emailRequisicao.corpo());
 			return new ResponseEntity<>("Email enviado com sucesso!", HttpStatus.OK);
 		} catch (EnviadorEmailExcecao e) {
-			log.error(e.getMessage());
-			return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+			log.error(e.getMessage(), e.getCause());
+			return new ResponseEntity<>(e.getMessage().concat(" -- ").concat(e.getCause().getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }
