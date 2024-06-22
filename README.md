@@ -52,18 +52,3 @@ Se a porta 8080 estiver ocupada em seu sistema, então voce pode mudar o numero 
 ## Acesso a API Docs
 - **Swagger** ``` http://localhost:8080/swagger-ui.html ```
 - **API Docs** ``` http://localhost:8080/v3/api-docs ```
-
-## Como rodar os testes de Unidade
-
-**Rode os casos de testes usando qualquer comando abaixo**
-
-> **Nota:** Estes comandos precisam rodar dentro da pasta raiz do projeto i.e dentro de **email-service**
-
-- **Para rodar todos os testes**
-  <br/>```mvn test```
-
-
-- **Para rodar uma classe de teste em particular**
-  <br/>```mvn -Dtest=EnviadorEmailControllerTest test```
-  <br/>or
-  <br/>```mvn -Dtest=EnviadorEmailControllerTest test```
